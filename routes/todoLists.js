@@ -6,7 +6,6 @@ const passport = require('passport');
 
 
 router.post('/add', passport.authenticate('jwt', { session: false }), (req, res, next) => {
-
     const newTodo = new TodoList({
         title: req.body.title,
         desc: req.body.desc,
