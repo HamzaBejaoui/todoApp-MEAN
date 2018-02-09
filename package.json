@@ -1,0 +1,27 @@
+{
+  "name": "app1",
+  "version": "0.0.1",
+  "description": "this is my first app",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [
+    "nodejs",
+    "mean-stack"
+  ],
+  "author": "Hamza Bejaoui",
+  "license": "MIT ",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.1.1",
+    "mongodb": "^3.0.2",
+    "mongoose": "^5.0.3",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.1",
+    "path": "^0.12.7"
+  }
+}
