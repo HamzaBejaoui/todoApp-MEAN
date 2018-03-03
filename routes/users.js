@@ -5,7 +5,7 @@ const User = require('../models/user');
 
 
 router.post('/register', (req, res) => {
-        console.log("req.body", req.body);
+        
         let newUser = new User({
             name: req.body.name,
             lastname: req.body.lastname,
@@ -13,7 +13,6 @@ router.post('/register', (req, res) => {
             password: req.body.password,
             job: req.body.job
         });
-        console.log("newUser", newUser);
         newUser.save((err, user) => {
             if (err) {
                 res.json({ success: false, msg: err });
@@ -21,7 +20,6 @@ router.post('/register', (req, res) => {
                 res.json({ success: true, msg: "user added succeffully", user });
             }
         });
-   
 });
 
 

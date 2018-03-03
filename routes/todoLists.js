@@ -44,6 +44,24 @@ router.post('/list', passport.authenticate('jwt', { session: false }), (req, res
 });
 
 
+router.post('/list/:id', passport.authenticate('jwt', { session: false }), (req, res, next) => {
+    TodoList.find({ createdBy: req.body.createdBy }, (err, todo) => {
+        if (err) {
+            return res.send({
+                success: false,
+                msg: err
+            });
+        }
+        let resultat = todo[req.params.id];
+        return res.send({
+            success: true,
+            resultat
+        });
+    });
+});
+
+
+
 router.delete('/remove/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
     TodoList.remove({ _id: req.params.id }, (err) => {
         if (err) {
